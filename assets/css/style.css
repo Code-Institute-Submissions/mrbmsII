@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Spacing *** MRB ***
+# Typography
+# Navigation
+# Links, Buttons and Badges
+# Forms
+# Carousel
+# Tables
+# Breadcrumbs
+# Dashboard
+# Event Details
+# Invites
+# Featured
+# Others
+# Footer
+# Media Queries for different screen sizes
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body, h1, h2, h3, h4, h5, p, a, label, small, input, ul>li {
+  font-family: Montserrat;
+}
+
+body {
+  color: #4D7488;
+}
+
+h2 {
+  font-size: 18pt;
+  line-height: 28pt;
+  color: #4D7488;
+  margin: 0 0 20px 0;
+}
+
+h3 {
+  color: #4EABDE;
+  font-size: 18pt;
+  line-height: 26pt;
+  font-weight: 500;
+  margin: 15px 0;
+}
+
+h4 {
+  color: #4EABDE;
+  font-size: 14pt;
+  font-weight: 500;
+  margin: 10px 0 15px 0;
+  line-height: 22pt;
+}
+
+h5 {
+  color: #4EABDE;
+  font-size: 12pt;
+  font-weight: 700;
+  line-height: 20pt;
+  margin: 10px 0 10px 0;
+}
+
+p, ul > li {
+  color: #688796;
+  font-size: 11pt;
+  font-weight: 500;
+  line-height: 20pt;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+a {
+  color: #4EABDE;
+  font-weight: 500;
+}
+
+a:hover {
+  color:#4D7488;
+  text-decoration: none;
+}
+
+.emphasized {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+small {
+  opacity: 0.7;
+  font-weight: 500;
+  font-size: 12px;
+  color: #4D7488;
+  line-height: 20px;
+}
+
+.text-muted {
+    color: #BBCAD2 !important;
+    font-weight: 500 !important;
+}
+
+.text-muted-1 {
+    color: #8CA5B3 !important;
+    font-weight: 500 !important;
+}
+/***********/
+
+.font-control {
+  font-size: 9pt;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+.navbar-msII .navbar-nav .nav-link {
+  color: #4D7488;
+  font-family: Montserrat;
+  font-size: 11pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 15px 0;
+}
+
+.navbar-light .navbar-toggler {
+  border: none;
+}
+
+.navbar-msII .navbar-nav .nav-link:hover {
+  color: #4EABDE;
+}
+
+.navbar-msII .show>.nav-link {
+  color: #E74850 !important;
+}
+
+.navbar-msII .dropdown-item {
+  font-weight: 500;
+  color: #4D7488;
+}
+
+.navbar-msII .dropdown-item:hover {
+  color: #4EABDE;
+}
+
+.header-logo {
+  max-height: 150px;
+}
+
+.page-header {
+  border-top: 3px #4EABDE solid;
+}
+
+.collapsed-menu {
+  border-top: 1px #D7E0E5 solid;
+  background-color: #F0F3F4;
+}
+
+.nav-item{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.nav-item.active{
+  border-color: #D7E0E5;
+  border-bottom: none;
+  color: #4D7488;
+}
+
+.nav-item:hover{
+  color: #4D7488;
+}
+
+.my-name-badge .author-badge {
+  min-width: 150px;
+  max-width: 250px;
+  width: auto;
+  height: 55px;
+  background: #F4F8FA;
+  border: 1px solid #D7E0E5;
+  border-radius: 100px;
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+  padding-left: 65px;
+}
+
+.my-name-badge .my-photo {
+  height: 55px;
+  width: 55px;
+  border-radius: 100px;
+  background-color: rgb(135, 135, 135);
+  overflow: hidden;
+  float: left;
+  position: absolute;
+  z-index: 100;
+}
+
+.my-photo img {
+  width: 100%;
+  height: auto;
+}
+
+.my-name-badge:hover  {
+  border-radius: 100px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px 0 #D7E0E5;
+}
+
+.my-name-badge .author-badge .author-name {
+  display: inline-block;
+  width: auto;
+  padding: 10px 0;
+}
+
+.my-name-badge .author-badge .author-name .the-author {
+  font-weight: 600;
+  font-size: 12px;
+  width: auto;
+  line-height: 14px;
+  padding-right: 15px;
+  margin-bottom: 0;
+}
+
+.my-name-badge .author-badge .author-name .name {
+  font-size: 18px;
+  color: #4EABDE;
+  width: auto;
+  padding-right: 15px;
+  line-height: 20px;
+  margin-bottom: 0;
+  text-transform: none !important;
+}
+
+/*--------------------------------------------------------------
+# Statistics Panel
+--------------------------------------------------------------*/
+.stats-content {
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #DEE6E9;
+    border-radius: 10px;
+}
+
+.stats-img {
+  border-radius: 10px;
+  overflow: hidden;
+  /*height: 170px;*/
+  border: 1px solid #DEE6E9;
+  background-color: #ffffff;
+}
+
+.stats-img.thumb {
+  /*height: 170px;*/
+}
+
+.stats-img.thumb > img {
+  width: 100%;
+  max-height: 170px;
+}
+
+.panel {
+  background: #F6F8FA;
+  border: 1px solid #DEE6E9;
+  border-radius: 10px;
+}
+
+.panel-wrapper {
+  padding-bottom: 10px;
+}
+
+
+
+
