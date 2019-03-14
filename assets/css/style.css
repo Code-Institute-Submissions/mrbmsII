@@ -3,21 +3,10 @@
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Spacing *** MRB ***
 # Typography
 # Navigation
 # Links, Buttons and Badges
-# Forms
-# Carousel
-# Tables
-# Breadcrumbs
-# Dashboard
-# Event Details
-# Invites
-# Featured
-# Others
-# Footer
-# Media Queries for different screen sizes
+# Statistics Panel
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -109,6 +98,50 @@ small {
 
 .font-control {
   font-size: 9pt;
+}
+
+/*--------------------------------------------------------------
+# Buttons
+--------------------------------------------------------------*/
+
+.btn-pgastats{
+  color: #4D7488;
+  font-family: Montserrat;
+  font-weight: 600;
+  background: #f2fbff;
+  border: 2px solid #CEE2EC;
+  border-radius: 100px;
+  text-transform: uppercase;
+  padding: auto 10px;
+  font-size: 12px;
+  margin: 0;
+  height: 35px;
+}
+
+.btn-pgastats.highlight{
+  background: #4EABDE;
+  border: 2px solid #4EABDE;
+  color: #ffffff;
+}
+
+.btn-pgastats.highlight:hover{
+  background: #4cb9f5;
+  border: 2px solid #4cb9f5;
+  color: #ffffff;
+  box-shadow: 0 2px 5px 0 #4cb9f5;
+}
+
+.btn-pgastats.destructive{
+  background: #c4343b;
+  border: 2px solid #c4343b;
+  color: #ffffff;
+}
+
+.btn-pgastats.destructive:hover{
+  background: #d7353d;
+  border: 2px solid #d7353d;
+  color: #ffffff;
+  box-shadow: 0 2px 5px 0 #c6262d;
 }
 
 /*--------------------------------------------------------------
