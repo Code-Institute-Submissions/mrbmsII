@@ -1,19 +1,19 @@
 # PGA Tour Statistics
 
-## Table of contents
+## Table of Contents
 
 <!--ts-->
 
-- [Table of contents](#table-of-contents)
+- [Table of contents](#Table-of-Contents)
 - [About](#About)
-  - [Functionality/UX](#Functionality)
+  - [Functionality/UX](#Functionality-and-UX)
 - [The Data](#The-Data)
 - [Technologies](#Technologies)
   - [Languages/Frameworks/Libraries/Tools](#Languages-Frameworks-Libraries-Tools)
   - [Other-Resources](#Other-Resources)
 - [Testing](#Testing)
   - [Tools-and-Methods-Used-for-Testing](#Tools-and-Methods-Used-for-Testing)
-  - [Additional-Points](#Additional-Points)
+  - [Additional-Notes](#Additional-Notes)
   [Futures](#Futures)
   - [Potential Enhancements](#Potential-Enhancements)
 - [Deployment](#Deployment)
@@ -28,7 +28,7 @@ Milestone Project Two / Interactive Frontend Development / Code Institute
 
 This application shows various PGA Tour statistics from the years 2002 - 2019. The data was scraped from the pgatour.com website. See Data section for more explanation.
 
-#### Functionality/UX
+#### Functionality and UX
 
 The application shows data for the following statistics. Each has a designated panel and its own collapsible sections. The statistics are:
 - Driving Accuracty
@@ -55,7 +55,7 @@ I modified that code to fix the bug as well as add additional data to produce my
 
 ## Technologies
 
-#### Languages/Frameworks/Libraries/Tools
+#### Languages Frameworks Libraries Tools
 
 - [HTML5](https://www.w3.org/TR/html5/ "HTML5 Official Site")
 
@@ -85,7 +85,7 @@ Used for running a script/spider to scrape the PGA Tour website
 - [Scrapy](https://scrapy.org/ "Scrapy - Web Scraping")
 Used for scraping the pgatour.com site for the data used
 
-#### Other-Resources
+#### Other Resources
 
 - https://getbootstrap.com/
 - https://www.w3schools.com/
@@ -102,7 +102,7 @@ There is immense potential improvement to this application. Some that come to mi
 
 ## Testing
 
-#### Tools-and-Methods-Used-for-Testing
+#### Tools and Methods Used for Testing
 
 - [HTML Validation](https://validator.w3.org/ "W3C Markup Validation Service")
 - [CSS Validation](http://jigsaw.w3.org/css-validator/ "CSS Validation Service")
