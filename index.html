@@ -7,7 +7,6 @@
     <title>PGA Tour Statistics</title>
     
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/dc.min.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
@@ -24,15 +23,14 @@
                             <img class="header-logo" src="assets/images/logo.png" alt="PGATour Logo">
                         </a>
 
-                        <!--<div class="collapsed-menu collapse navbar-collapse px-3 py-3 px-md-4 py-md-4 flex-row-reverse collapse" id="navbarnav">-->
                         <div class="navbar-collapse px-3 py-3 px-md-4 py-md-4 flex-row-reverse collapse" id="navbarnav">
                             <ul class="navbar-nav text-center">
                                 <li class="nav-item px-2 px-xl-3">
-                                    <a class="nav-link" href="how-it-works.html">How it Works</a>
+                                    <a href="#" class="nav-link" data-toggle="modal" data-target="#how-it-works-modal">How it Works</a>
                                 </li>
 
                                 <li class="nav-item px-2 px-xl-3">
-                                    <a class="nav-link" href="main-contact.html">Contact</a>
+                                    <a href="#" class="nav-link" data-toggle="modal" data-target="#contact-modal">Contact</a>
                                 </li>
 
                                 <li class="nav-item pl-2 pl-xl-3 mx-auto">
@@ -68,6 +66,14 @@
         <div class="row justify-content-center">
             <div class="col px-2 py-2">
                 <div class="stats-content">
+                    <div class="container">
+                        <div class="d-inline-flex p-2 mt-1">
+                            <div class="p-2 year-sel-label">Select Year: </div>
+                            <div class="p-2 mt-3">
+                                <select id="yr-selector" class="form-control"></select>
+                            </div>
+                        </div>
+                    </div>
                     <div class="container"> <!-- To take advantage of spacing within container class -->
                         <div class="panel-wrapper">
                             <div class="row panel pt-2 pb-2" id="driving-accuracy">
@@ -79,28 +85,29 @@
                                     </div>
                                 </div>
 
-                                <div class="col-12 col-md-6">
+                                <div class="col-12 col-md-7">
                                     <h4>Driving Accuracy</h4>
+                                    <h5 class="what-heading">What is it?</h5>
+                                    <p>Measures the % of times a player hits their driver and lands the ball in the fairway.</p>
                                 </div>
 
                                 <!-- Action Buttons -->
-                                <div class="col-12 col-md-3 text-right px-0">
-                                    <a class="btn btn-pgastats view-stats-btn w-100 my-1" data-toggle="collapse" data-target="#driving-stats-graph" data-stat="driving">View Graph</a>
-                                    <a class="btn btn-pgastats view-stats-btn w-100 my-1" data-toggle="collapse" data-target="#driving-stats-numbers" data-stat="driving">By the Numbers</a>
+                                <div class="col-12 col-md-3 text-right">
+                                    <a class="btn btn-pgastats w-100 my-1" data-toggle="collapse" data-target="#driving-coll-row-1" data-stat="driving">View Chart</a>
+                                    <a class="btn btn-pgastats w-100 my-1" data-toggle="collapse" data-target="#driving-coll-row-2" data-stat="driving">By the Numbers</a>
                                 </div>
 
                             </div> <!-- end panel 1 div -->
 
                             <!-- Graph and stats collapsable sections -->
-                            <div id="driving-stats-graph" class="row collapse">
-                                <div class="col-12">
-                                    <p>Driving Accuracy graph here</p>
+                            <div id="driving-coll-row-1" class="row collapse">
+                                <div class="col-sm-12 col-md-8 offset-md-2">
+                                    <div class="chart-section">
+                                        <canvas id="driving-line-chart" width="500" height="300"></canvas>
+                                    </div>
                                 </div>
                             </div>
-                            <div id="driving-stats-numbers" class="row collapse">
-                                <div class="col-12">
-                                    <p>Driving Accuracy stats here</p>
-                                </div>
+                            <div id="driving-coll-row-2" class="row collapse pt-4">
                             </div>
                             <!-- End graph and stats collapsable sections -->
 
@@ -116,28 +123,32 @@
                                     </div>
                                 </div>
 
-                                <div class="col-12 col-md-6">
+                                <div class="col-12 col-md-7">
                                     <h4>Greens In Regulation (GIR)</h4>
+                                    <h5 class="what-heading">What is it?</h5>
+                                    <p>
+                                        Measures the % of times a player gets on the green in regulation. Regulation is 2 shots less than par. For example,
+                                        on a par 4, regulation would be getting on the green in 2 shots.
+                                    </p>
                                 </div>
 
                                 <!-- Action Buttons -->
-                                <div class="col-12 col-md-3 text-right px-0">
-                                    <a class="btn btn-pgastats view-stats-btn w-100 my-1" data-toggle="collapse" data-target="#gir-stats-graph" data-stat="gir">View Graph</a>
-                                    <a class="btn btn-pgastats view-stats-btn w-100 my-1" data-toggle="collapse" data-target="#gir-stats-numbers" data-stat="gir">By the Numbers</a>
+                                <div class="col-12 col-md-3 text-right">
+                                    <a class="btn btn-pgastats w-100 my-1" data-toggle="collapse" data-target="#gir-coll-row-1" data-stat="gir">View Chart</a>
+                                    <a class="btn btn-pgastats w-100 my-1" data-toggle="collapse" data-target="#gir-coll-row-2" data-stat="gir">By the Numbers</a>
                                 </div>
 
                             </div> <!-- end panel 2 div -->
 
                             <!-- Graph and stats collapsable sections -->
-                            <div id="gir-stats-graph" class="row collapse">
+                            <div id="gir-coll-row-1" class="row collapse">
                                 <div class="col-12">
-                                    <p>GIR graph here</p>
+                                    <div class="col-sm-12 col-md-8 offset-md-2">
+                                        <canvas id="gir-line-chart" width="500" height="300"></canvas>
+                                    </div>
                                 </div>
                             </div>
-                            <div id="gir-stats-numbers" class="row collapse">
-                                <div class="col-12">
-                                    <p>GIR stats here</p>
-                                </div>
+                            <div id="gir-coll-row-2" class="row collapse pt-4">
                             </div>
                             <!-- End graph and stats collapsable sections -->
 
@@ -150,32 +161,34 @@
                                 <div class="col-12 col-md-2 pr-md-0">
                                     <div class="stats-img thumb">
                                         <img src="assets/images/iron.jpg" alt="iron" />
-                                        <!--<img src="assets/images/balloons.jpg" alt="iron" />-->
                                     </div>
                                 </div>
 
-                                <div class="col-12 col-md-6">
+                                <div class="col-12 col-md-7">
                                     <h4>GIR 200+ Yards</h4>
+                                    <h5 class="what-heading">What is it?</h5>
+                                    <p>
+                                        Measures the % of times a player gets on the green in regulation when the shot to get on in regulation is over 200 yards.
+                                    </p>
                                 </div>
 
                                 <!-- Action Buttons -->
-                                <div class="col-12 col-md-3 text-right px-0">
-                                    <a class="btn btn-pgastats view-stats-btn w-100 my-1" data-toggle="collapse" data-target="#gir-200-plus-stats-graph" data-stat="gir-200-plus">View Graph</a>
-                                    <a class="btn btn-pgastats view-stats-btn w-100 my-1" data-toggle="collapse" data-target="#gir-200-plus-stats-numbers" data-stat="gir-200-plus">By the Numbers</a>
+                                <div class="col-12 col-md-3 text-right">
+                                    <a class="btn btn-pgastats w-100 my-1" data-toggle="collapse" data-target="#gir-200-plus-coll-row-1" data-stat="gir-200-plus">View Chart</a>
+                                    <a class="btn btn-pgastats w-100 my-1" data-toggle="collapse" data-target="#gir-200-plus-coll-row-2" data-stat="gir-200-plus">By the Numbers</a>
                                 </div>
 
                             </div> <!-- end panel 3 div -->
 
                             <!-- Graph and stats collapsable sections -->
-                            <div id="gir-200-plus-stats-graph" class="row collapse">
-                                <div class="col-12">
-                                    <p>GIR 200+ graph here</p>
+                            <div id="gir-200-plus-coll-row-1" class="row collapse">
+                                <div class="col-sm-12 col-md-8 offset-md-2">
+                                    <div class="chart-section">
+                                        <canvas id="gir-200-plus-line-chart" width="500" height="300"></canvas>
+                                    </div>
                                 </div>
                             </div>
-                            <div id="gir-200-plus-stats-numbers" class="row collapse">
-                                <div class="col-12">
-                                    <p>GIR 200+ stats here</p>
-                                </div>
+                            <div id="gir-200-plus-coll-row-2" class="row collapse pt-4">
                             </div>
                             <!-- End graph and stats collapsable sections -->
 
@@ -191,28 +204,31 @@
                                     </div>
                                 </div>
 
-                                <div class="col-12 col-md-6">
+                                <div class="col-12 col-md-7">
                                     <h4>GIR 175-200 Yards</h4>
+                                    <h5 class="what-heading">What is it?</h5>
+                                    <p>
+                                        Measures the % of times a player gets on the green in regulation when the shot to get on in regulation is between and 175 and 200 yards.
+                                    </p>
                                 </div>
 
                                 <!-- Action Buttons -->
-                                <div class="col-12 col-md-3 text-right px-0">
-                                    <a class="btn btn-pgastats view-stats-btn w-100 my-1" data-toggle="collapse" data-target="#gir-175-200-stats-graph" data-stat="gir-175-200">View Graph</a>
-                                    <a class="btn btn-pgastats view-stats-btn w-100 my-1" data-toggle="collapse" data-target="#gir-175-200-stats-numbers" data-stat="gir-175-200">By the Numbers</a>
+                                <div class="col-12 col-md-3 text-right">
+                                    <a class="btn btn-pgastats w-100 my-1" data-toggle="collapse" data-target="#gir-175-200-coll-row-1" data-stat="gir-175-200">View Chart</a>
+                                    <a class="btn btn-pgastats w-100 my-1" data-toggle="collapse" data-target="#gir-175-200-coll-row-2" data-stat="gir-175-200">By the Numbers</a>
                                 </div>
 
                             </div> <!-- end panel 4 div -->
 
                             <!-- Graph and stats collapsable sections -->
-                            <div id="gir-175-200-stats-graph" class="row collapse">
-                                <div class="col-12">
-                                    <p>GIR 175-200 graph here</p>
+                            <div id="gir-175-200-coll-row-1" class="row collapse">
+                                <div class="col-sm-12 col-md-8 offset-md-2">
+                                    <div class="chart-section">
+                                        <canvas id="gir-175-200-line-chart" width="500" height="300"></canvas>
+                                    </div>
                                 </div>
                             </div>
-                            <div id="gir-175-200-stats-numbers" class="row collapse">
-                                <div class="col-12">
-                                    <p>GIR 175-200 stats here</p>
-                                </div>
+                            <div id="gir-175-200-coll-row-2" class="row collapse pt-4">
                             </div>
                             <!-- End graph and stats collapsable sections -->
 
@@ -228,28 +244,31 @@
                                     </div>
                                 </div>
 
-                                <div class="col-12 col-md-6">
+                                <div class="col-12 col-md-7">
                                     <h4>GIR 150-175 Yards</h4>
+                                    <h5 class="what-heading">What is it?</h5>
+                                    <p>
+                                        Measures the % of times a player gets on the green in regulation when the shot to get on in regulation is between 150 and 175 yards.
+                                    </p>
                                 </div>
 
                                 <!-- Action Buttons -->
-                                <div class="col-12 col-md-3 text-right px-0">
-                                    <a class="btn btn-pgastats view-stats-btn w-100 my-1" data-toggle="collapse" data-target="#gir-150-175-stats-graph" data-stat="gir-150-175">View Graph</a>
-                                    <a class="btn btn-pgastats view-stats-btn w-100 my-1" data-toggle="collapse" data-target="#gir-150-175-stats-numbers" data-stat="gir-150-175">By the Numbers</a>
+                                <div class="col-12 col-md-3 text-right">
+                                    <a class="btn btn-pgastats w-100 my-1" data-toggle="collapse" data-target="#gir-150-175-coll-row-1" data-stat="gir-150-175">View Chart</a>
+                                    <a class="btn btn-pgastats w-100 my-1" data-toggle="collapse" data-target="#gir-150-175-coll-row-2" data-stat="gir-150-175">By the Numbers</a>
                                 </div>
 
                             </div> <!-- end panel 5 div -->
 
                             <!-- Graph and stats collapsable sections -->
-                            <div id="gir-150-175-stats-graph" class="row collapse">
-                                <div class="col-12">
-                                    <p>GIR 150-175 graph here</p>
+                            <div id="gir-150-175-coll-row-1" class="row collapse">
+                                <div class="col-sm-12 col-md-8 offset-md-2">
+                                    <div class="chart-section">
+                                        <canvas id="gir-150-175-line-chart" width="500" height="300"></canvas>
+                                    </div>
                                 </div>
                             </div>
-                            <div id="gir-150-175-stats-numbers" class="row collapse">
-                                <div class="col-12">
-                                    <p>GIR 150-175 stats here</p>
-                                </div>
+                            <div id="gir-150-175-coll-row-2" class="row collapse pt-4">
                             </div>
                             <!-- End graph and stats collapsable sections -->
 
@@ -265,32 +284,75 @@
                                     </div>
                                 </div>
 
-                                <div class="col-12 col-md-6">
+                                <div class="col-12 col-md-7">
                                     <h4>GIR 125-150 Yards</h4>
+                                    <h5 class="what-heading">What is it?</h5>
+                                    <p>
+                                        Measures the % of times a player gets on the green in regulation when the shot to get on in regulation is between 125 and 150 yards.
+                                    </p>
                                 </div>
 
                                 <!-- Action Buttons -->
-                                <div class="col-12 col-md-3 text-right px-0">
-                                    <a class="btn btn-pgastats view-stats-btn w-100 my-1" data-toggle="collapse" data-target="#gir-125-150-stats-graph" data-stat="gir-125-150">View Graph</a>
-                                    <a class="btn btn-pgastats view-stats-btn w-100 my-1" data-toggle="collapse" data-target="#gir-125-150-stats-numbers" data-stat="gir-125-150">By the Numbers</a>
+                                <div class="col-12 col-md-3 text-right">
+                                    <a class="btn btn-pgastats w-100 my-1" data-toggle="collapse" data-target="#gir-125-150-coll-row-1" data-stat="gir-125-150">View Chart</a>
+                                    <a class="btn btn-pgastats w-100 my-1" data-toggle="collapse" data-target="#gir-125-150-coll-row-2" data-stat="gir-125-150">By the Numbers</a>
                                 </div>
 
                             </div> <!-- end panel 6 div -->
 
                             <!-- Graph and stats collapsable sections -->
-                            <div id="gir-125-150-stats-graph" class="row collapse">
-                                <div class="col-12">
-                                    <p>GIR 125-150 graph here</p>
+                            <div id="gir-125-150-coll-row-1" class="row collapse pt-4">
+                                <div class="col-sm-12 col-md-8 offset-md-2">
+                                    <div class="chart-section">
+                                        <canvas id="gir-125-150-line-chart" width="500" height="300"></canvas>
+                                    </div>
                                 </div>
                             </div>
-                            <div id="gir-125-150-stats-numbers" class="row collapse">
-                                <div class="col-12">
-                                    <p>GIR 125-150 stats here</p>
-                                </div>
+                            <div id="gir-125-150-coll-row-2" class="row collapse pt-4">
                             </div>
                             <!-- End graph and stats collapsable sections -->
 
                         </div> <!-- end panel wrapper 6 -->
+
+                        <div class="panel-wrapper">
+                            <div class="row panel pt-2 pb-2" id="gir-100-125">
+
+                                <!-- Image Container -->
+                                <div class="col-12 col-md-2 pr-md-0">
+                                    <div class="stats-img thumb">
+                                        <img src="assets/images/iron.jpg" alt="iron" />
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-7">
+                                    <h4>GIR 100-125 Yards</h4>
+                                    <h5 class="what-heading">What is it?</h5>
+                                    <p>
+                                        Measures the % of times a player gets on the green in regulation when the shot to get on in regulation is between 100 and 125 yards.
+                                    </p>
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div class="col-12 col-md-3 text-right">
+                                    <a class="btn btn-pgastats w-100 my-1" data-toggle="collapse" data-target="#gir-125-150-coll-row-1" data-stat="gir-125-150">View Chart</a>
+                                    <a class="btn btn-pgastats w-100 my-1" data-toggle="collapse" data-target="#gir-125-150-coll-row-2" data-stat="gir-125-150">By the Numbers</a>
+                                </div>
+
+                            </div> <!-- end panel 7 div -->
+
+                            <!-- Graph and stats collapsable sections -->
+                            <div id="gir-100-125-coll-row-1" class="row collapse pt-4">
+                                <div class="col-sm-12 col-md-8 offset-md-2">
+                                    <div class="chart-section">
+                                        <canvas id="gir-100-125-line-chart" width="500" height="300"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="gir-100-125-coll-row-2" class="row collapse pt-4">
+                            </div>
+                            <!-- End graph and stats collapsable sections -->
+
+                        </div> <!-- end panel wrapper 7 -->
 
                         <div class="panel-wrapper">
                             <div class="row panel pt-2 pb-2" id="scrambling">
@@ -303,34 +365,35 @@
                                 </div>
 
                                 <!-- Stats Header -->
-                                <div class="col-12 px=0 px-md-3 col-md-6">
+                                <div class="col-12 col-md-7">
                                     <h4>Scrambling (Up and Down)</h4>
-                                    <h5>Stat 1</h5>
-                                    <h5>Stat 2</h5>
-                                    <h5>Stat 3</h5>
+                                    <h5 class="what-heading">What is it?</h5>
+                                    <p>
+                                        Measures the % of times a player achieves par when they don't get on the green in regulation. For example, if on a par 4 a player
+                                        took 3 shots to get on the green yet they "scrambled" and still made par.
+                                    </p>
                                 </div>
 
                                 <!-- Action Buttons -->
-                                <div class="col-12 col-md-3 text-right px-0">
-                                    <a class="btn btn-pgastats view-stats-btn w-100 my-1" data-toggle="collapse" data-target="#chipping-stats-graph" data-stat="chipping">View Graph</a>
-                                    <a class="btn btn-pgastats view-stats-btn w-100 my-1" data-toggle="collapse" data-target="#chipping-stats-numbers" data-stat="chipping">By the Numbers</a>
+                                <div class="col-12 col-md-3 text-right">
+                                    <a class="btn btn-pgastats w-100 my-1" data-toggle="collapse" data-target="#scrambling-coll-row-1" data-stat="scrambling">View Chart</a>
+                                    <a class="btn btn-pgastats w-100 my-1" data-toggle="collapse" data-target="#scrambling-coll-row-2" data-stat="scrambling">By the Numbers</a>
                                 </div>
-                            </div> <!-- end panel 7 div -->
+                            </div> <!-- end panel 8 div -->
 
                             <!-- Graph and stats collapsable sections -->
-                            <div id="chipping-stats-graph" class="row collapse">
-                                <div class="col-12">
-                                    <p>GIR 125-150 graph here</p>
+                            <div id="scrambling-coll-row-1" class="row collapse">
+                                <div class="col-sm-12 col-md-8 offset-md-2">
+                                    <div class="chart-section">
+                                        <canvas id="scrambling-line-chart" width="500" height="300"></canvas>
+                                    </div>
                                 </div>
                             </div>
-                            <div id="chipping-stats-numbers" class="row collapse">
-                                <div class="col-12">
-                                    <p>GIR 125-150 stats here</p>
-                                </div>
+                            <div id="scrambling-coll-row-2" class="row collapse pt-4">
                             </div>
                             <!-- End graph and stats collapsable sections -->
 
-                        </div> <!-- end panel wrapper 7 -->
+                        </div> <!-- end panel wrapper 8 -->
 
                         <div class="row panel pt-2 pb-2" id="sand-saves">
 
@@ -341,28 +404,31 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 col-md-6">
+                            <div class="col-12 col-md-7">
                                 <h4>Sand Saves</h4>
+                                <h5 class="what-heading">What is it?</h5>
+                                <p>
+                                    Measures the % of times a player achieves par when one of their shots before went into a bunker.
+                                </p>
                             </div>
 
                             <!-- Action Buttons -->
-                            <div class="col-12 col-md-3 text-right px-0">
-                                <a class="btn btn-pgastats view-stats-btn w-100 my-1" data-toggle="collapse" data-target="#sand-saves-stats-graph" data-stat="sand-saves">View Graph</a>
-                                <a class="btn btn-pgastats view-stats-btn w-100 my-1" data-toggle="collapse" data-target="#sand-saves-stats-numbers" data-stat="sand-saves">By the Numbers</a>
+                                <div class="col-12 col-md-3 text-right">
+                                <a class="btn btn-pgastats w-100 my-1" data-toggle="collapse" data-target="#sand-saves-coll-row-1" data-stat="sand-saves">View Chart</a>
+                                <a class="btn btn-pgastats w-100 my-1" data-toggle="collapse" data-target="#sand-saves-coll-row-2" data-stat="sand-saves">By the Numbers</a>
                             </div>
 
-                        </div> <!-- end panel 8 div -->
+                        </div> <!-- end panel 9 div -->
 
                         <!-- Graph and stats collapsable sections -->
-                        <div id="sand-saves-stats-graph" class="row collapse">
-                            <div class="col-12">
-                                <p>Sand Saves graph here</p>
+                        <div id="sand-saves-coll-row-1" class="row collapse">
+                            <div class="col-sm-12 col-md-8 offset-md-2">
+                                <div class="chart-section">
+                                    <canvas id="sand-saves-line-chart" width="500" height="300"></canvas>
+                                </div>
                             </div>
                         </div>
-                        <div id="sand-saves-stats-numbers" class="row collapse">
-                            <div class="col-12">
-                                <p>Sand Saves stats here</p>
-                            </div>
+                        <div id="sand-saves-coll-row-2" class="row collapse pt-4">
                         </div>
                         <!-- End graph and stats collapsable sections -->
                         
@@ -373,6 +439,67 @@
     </section>
     <!-- End Dashboard -->
 
+    <!-- Modals -->
+
+    <!-- How it works modal -->
+    <div class="modal fade" id="how-it-works-modal" tabindex="-1" role="dialog" aria-labelledby="how-it-works-modal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">How it Works</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        These are various PGA Tour statistics from the years 2002 - 2019. Each statistic has various data points
+                        associated with it. These data points can been visualised graphically via a line chart or in a numerical
+                        list format.
+                    </p>
+                    <p>
+                        Selecting a year from the dropdown control will dynamically update the data points for each statistic, thereby
+                        automatically refreshing the line charts as well as the numerical data list sections.
+                    </p>
+                    <p>
+                        Clicking the "View Chart" button will expand a section that shows the selected statistic and its data points
+                        in a line chart, whilst clicking the "By The Numbers" button will show data for the selected statistic in a list format.
+                    </p>
+                </div>
+                <div class="modal-footer mx-auto">
+                    <button type="button" class="btn btn-pgastats-small-modal " data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End How it works modal -->
+
+    <!-- Contact modal -->
+    <div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="contact-modal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Contact Me</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        If you have any questions regarding this site or the data, please feel free to <a href="mailto:michaelrbrown02@gmail.com">contact me via email</a>. I will even answer questions about golf! ;-)
+                    </p>
+                </div>
+                <div class="modal-footer mx-auto">
+                    <button type="button" class="btn btn-pgastats-small-modal " data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End How it works modal -->
+
+    <!-- End Modals -->
+
+    <!-- JavaScript libraries -->
     <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/d3.min.js"></script>
@@ -380,8 +507,9 @@
     <script type="text/javascript" src="assets/js/dc.min.js"></script> <!-- Depends on crossfilter.js -->
     <!-- Allows deferring calling a function until the data is ready -->
     <script type="text/javascript" src="assets/js/queue.min.js"></script>
-    
-    <script type="text/javascript" src="assets/js/msII.js"></script>
+    <script type="text/javascript" src="assets/js/Chart.js"></script>    
+    <script type="module" src="assets/js/msII.js"></script>
+    <!-- End JavaScript libraries -->
 
 </body>
 </html>
