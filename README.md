@@ -7,13 +7,14 @@
 - [Table of contents](#Table-of-Contents)
 - [About](#About)
   - [Functionality/UX](#Functionality-and-UX)
-- [The Data](#The-Data)
+  - [The Data](#The-Data)
 - [Technologies](#Technologies)
   - [Languages/Frameworks/Libraries/Tools](#Languages-Frameworks-Libraries-Tools)
-  - [Other-Resources](#Other-Resources)
+  - [Other Resources](#Other-Resources)
+  - [About the Charts](#About-the-Charts)
 - [Testing](#Testing)
-  - [Tools-and-Methods-Used-for-Testing](#Tools-and-Methods-Used-for-Testing)
-  - [Additional-Notes](#Additional-Notes)
+  - [Tools and Methods Used for Testing](#Tools-and-Methods-Used-for-Testing)
+  - [Additional Notes](#Additional-Notes)
   [Futures](#Futures)
   - [Potential Enhancements](#Potential-Enhancements)
 - [Deployment](#Deployment)
@@ -47,7 +48,7 @@ The collapsible sections art controlled via the "View Chart" and "By the Numbers
 
 There is data for each statistic from the years 2002 - 2019. Selecting the year from the dropdown control will dynamically update the data displayed in each of the statics' sections, both the line chart and the numerical list display.
 
-## The Data
+#### The Data
 
 When embarking upon the project, I knew I wanted to do something with charts/graphs. Being an avid golfer and a PGA Tour fan, I first decided to see what ready-made JSON datasets there were available for the PGA.
 I didn't find anything. However, I did happen upon something on github (see Acknowledgements section). It was a great starting point. There was a bug in it as something had changed on the website.
@@ -91,6 +92,14 @@ Used for scraping the pgatour.com site for the data used
 - https://www.w3schools.com/
 - https://stackoverflow.com/
 - https://slack.com/
+
+#### About the Charts
+
+One might ask, "if you are using dc and d3, why are you also using Chart.js?" Great question. As there was very little grouping, summing and aggregating required, I was struggling with
+crossfilter and dc to chart the data correctly. In essence, each record within my JSON file is indeed the data that is charted; no aggregating required. Chart.js is perfect for this, more
+simplistic chart creation. I am using the aforemention libraries for some grouping but that is it. All charting is done by Chart.js.
+
+And a final note about this. I actually find Chart.js easier to work with that dc and d3.
 
 #### Potential Enhancements
 
