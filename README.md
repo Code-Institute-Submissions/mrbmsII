@@ -96,7 +96,7 @@ Used for scraping the pgatour.com site for the data used
 #### About the Charts
 
 One might ask, "if you are using dc and d3, why are you also using Chart.js?" Great question. As there was very little grouping, summing and aggregating required, I was struggling with
-crossfilter and dc to chart the data correctly. In essence, each record within my JSON file is indeed the data that is charted; no aggregating required. Chart.js is perfect for this, more
+crossfilter and dc to chart the data correctly. In essence, each record within my JSON file is indeed the data that is charted; no aggregating required. Chart.js is perfect for this more
 simplistic chart creation. I am using the aforemention libraries for some grouping but that is it. All charting is done by Chart.js.
 
 And a final note about this. I actually find Chart.js easier to work with that dc and d3.
