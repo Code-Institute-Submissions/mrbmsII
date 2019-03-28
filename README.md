@@ -125,14 +125,14 @@ I used a lot of visual comparison of the original data set with what was display
 
 ## Deployment
 
-- Used GitHub Pages to deploy the final version (https://github.com/mrbrown2207/mrbmsII).
+- Used GitHub Pages to deploy the final version (https://mrbrown2207.github.io/mrbmsII/).
 
 ## Credits
 
 #### Content
 
 - All written content is bespoke and created by the code author (Michael Brown).
-- Images used are royalty-free, downloaded from the web
+- Images used are royalty-free, downloaded from the web.
 
 #### Acknowledgements
 
